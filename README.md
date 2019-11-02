@@ -1,7 +1,7 @@
 # pyTittler
 PyTittler is intended to be a pdf file renamer based on user template definition
 
-I'm not a programmer so dont blame me for the messy code, fell free to improve it if you want.
+I'm not a programmer so dont blame me for the messy code, feel free to improve it if you want.
 
 Storyline:
 
