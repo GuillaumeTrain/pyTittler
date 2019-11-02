@@ -86,8 +86,9 @@ class MyApp(main.Ui_MainWindow,QtWidgets.QMainWindow):
         self.graphicsView.rectChanged.connect(self.graphicsView.onRectChanged)
         self.connect(self.pushButton_7,QtCore.SIGNAL("clicked()"),self.scan)
         self.connect(self.pushButton_8, QtCore.SIGNAL("clicked()"), self.rename)
-        self.UnAutorizedchartable=["< ",">",":",'"',"/","\\","|","?","*","©",",",";"]
+        self.UnAutorizedchartable=["< ",">",":",'"',"/","\\","|","?","*","©",",",";","'","‘","»"]
         self.spacechartable=["\n","   ","  "]
+        self.filenamemaxchar=30
         print("init ok")
 
     def initscanner(self):
@@ -193,27 +194,31 @@ class MyApp(main.Ui_MainWindow,QtWidgets.QMainWindow):
                                                 strtittle = "{}".format(pytesseract.image_to_string(Image.open("scannerrecttittle.png")))
                                                 charnum=0
                                                 strfilename=""
+
                                                 for char in strtittle:
-                                                    print("char : "+char)
-                                                    unwanted=False
-                                                    returnline=False
-                                                    for unautorizedchar in self.UnAutorizedchartable :
-                                                        print("strtittle : " + unautorizedchar)
-                                                        if char is unautorizedchar :
-                                                            unwanted = True
-                                                    for spacechar in self.spacechartable :
-                                                        if char is spacechar:
-                                                            returnline=True
-                                                    if unwanted is True:
-                                                        pass
-                                                    elif returnline is True :
-                                                        print("strfilename : " + " ")
-                                                        strfilename=strfilename+" "
+                                                    if charnum < self.filenamemaxchar:
+                                                        print("char : "+char)
+                                                        unwanted=False
+                                                        returnline=False
+                                                        for unautorizedchar in self.UnAutorizedchartable :
+                                                            print("strtittle : " + unautorizedchar)
+                                                            if char is unautorizedchar :
+                                                                unwanted = True
+                                                        for spacechar in self.spacechartable :
+                                                            if char is spacechar:
+                                                                returnline=True
+                                                        if unwanted is True:
+                                                            pass
+                                                        elif returnline is True :
+                                                            print("strfilename : " + " ")
+                                                            strfilename=strfilename+" "
+                                                        else :
+                                                            print("strfilename : " + strfilename)
+                                                            strfilename=strfilename+strtittle[charnum]
                                                     else :
-                                                        print("strfilename : " + strfilename)
-                                                        strfilename=strfilename+strtittle[charnum]
+                                                        pass
                                                     charnum=charnum+1
-                                                file.setText(3,strfilename )
+                                                    file.setText(3,strfilename )
                                     except:
                                         print("wand file error : ".format(file_abspath))
                                         pass
