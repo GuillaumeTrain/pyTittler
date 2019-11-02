@@ -26,7 +26,9 @@ Templates are composed of the following items :
 - a tittle zone : the tittle zone is the pdf zone to be read when the trigger is positive
 
 GUI Overview:
+
 <a href="https://ibb.co/4Vy08sB"><img src="https://i.ibb.co/S3TZtQq/Annotation-2019-11-02-140619.png" alt="Annotation-2019-11-02-140619" border="0"></a><br /><a target='_blank' href='https://fr.imgbb.com/'>hebergement gif animé</a><br />
+
 
 this program is based on the following technologies :
 python: python 3.7.5 (i dont know why but this program cannot run into 3.8 for now)
