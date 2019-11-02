@@ -30,12 +30,13 @@ GUI Overview:
 <a href="https://ibb.co/4Vy08sB"><img src="https://i.ibb.co/S3TZtQq/Annotation-2019-11-02-140619.png" alt="Annotation-2019-11-02-140619" border="0"></a><br /><br />
 
 
-this program is based on the following technologies :
-python: python 3.7.5 (i dont know why but this program cannot run into 3.8 for now)
-Pyside2 : pyQT5 derivate for python GUI dev
-Pillow : image handleling modules/libs
-Wand : pdf to image processing core
-Tesseract : trained IA to image to text recognizing core
+This program is based on the following technologies :
+
+- python: python 3.7.5 (i dont know why but this program cannot run into 3.8 for now)
+- Pyside2 : pyQT5 derivate for python GUI dev
+- Pillow : image handleling modules/libs
+- Wand : pdf to image processing core
+- Tesseract : trained IA to image to text recognizing core
 
 so you'll need the following ressouces: (all are 32bit versions for me)
 pip ressources :
@@ -49,3 +50,5 @@ third party software (may be installed to get the corresponding python wrapper t
 - imagemagik
 - tesseract
 
+A big refactoring based on object review and multiprocessing is needed.
+I will do it later.
