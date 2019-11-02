@@ -1,5 +1,3 @@
-<meta name="google-site-verification" content="R6yUxhBjC4_OTLtZ61NiwC39Y7JUaVpEK6K3v_QR-eU" />
-
 # pyTittler
 PyTittler is intended to be a pdf file renamer based on user template definition
 
