@@ -5,7 +5,7 @@ I'm not a programmer so dont blame me for the messy code, fell free to improve i
 
 Storyline:
 
-1) My girl friend was frustrated do not be able to switch on my PC. (she just missed up switch on the screen)
+1) My girlfriend was frustrated do not be able to switch on my PC. (she just missed up switch on the screen)
 2) She unintentionally destroyed it , making it fall from a few meters high.
 3) The hard disk was damaged and with it , my pdf collection (around 50 Go). i managed to recover them using the hard disk 
 serial port. The finals files were unamed a needs to be check one by one.
