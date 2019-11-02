@@ -19,11 +19,14 @@ Process overview (from program point of view):
 4) summarise positive results with renaming proposal
 5) copy validated proposal on the new file/folder naming proposal
 
-templates are composed of the following items :
+Templates are composed of the following items :
 - category : just a text corresponding to a top folder in the final naming sequence
 - subcategory/template : just a text corresponding to a sub folder placed into category folder in the final naming sequence
 - OCRtrigger : a text (redefinable in the edit line of GUI) associated with a trigger zone (Qrect)
 - a tittle zone : the tittle zone is the pdf zone to be read when the trigger is positive
+
+GUI Overview:
+<a href="https://ibb.co/4Vy08sB"><img src="https://i.ibb.co/S3TZtQq/Annotation-2019-11-02-140619.png" alt="Annotation-2019-11-02-140619" border="0"></a><br /><a target='_blank' href='https://fr.imgbb.com/'>hebergement gif animé</a><br />
 
 this program is based on the following technologies :
 python: python 3.7.5 (i dont know why but this program cannot run into 3.8 for now)
