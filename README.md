@@ -14,8 +14,8 @@ serial port. The final files were unamed, and, needed to be checked one by one.
 Process overview (from program point of view):
 
 1) get file to be rename path
-2) get templates from some files manual analisys
-3) apply each templates on each files
+2) get templates from some files manual analysis
+3) apply each template on each file
 4) summarise positive results with renaming proposal
 5) copy validated proposal on the new file/folder naming proposal
 
