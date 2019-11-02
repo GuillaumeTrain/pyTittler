@@ -1,0 +1,10 @@
+
+pillow
+pytesseract
+wand
+PyQt5
+tesseract
+Pyside2
+MagickWand
+
+
