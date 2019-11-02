@@ -27,7 +27,7 @@ Templates are composed of the following items :
 
 GUI Overview:
 
-<a href="https://ibb.co/4Vy08sB"><img src="https://i.ibb.co/S3TZtQq/Annotation-2019-11-02-140619.png" alt="Annotation-2019-11-02-140619" border="0"></a><br /><a target='_blank' href='https://fr.imgbb.com/'>hebergement gif animé</a><br />
+<a href="https://ibb.co/4Vy08sB"><img src="https://i.ibb.co/S3TZtQq/Annotation-2019-11-02-140619.png" alt="Annotation-2019-11-02-140619" border="0"></a><br /><br />
 
 
 this program is based on the following technologies :
