@@ -135,36 +135,44 @@ class MyApp(main.Ui_MainWindow,QtWidgets.QMainWindow):
         self.initscanner()
         filelist_root = self.treeWidget_3.invisibleRootItem()
         filelist_childcount = filelist_root.childCount()
+
         template_category_root = self.treeWidget_2.invisibleRootItem()
-        template_category_count=template_category_root.childCount()
+        category_count=template_category_root.childCount()
 
-        if template_category_count>0 and filelist_childcount>0:
+        print(" template_category_count : {} ".format( category_count))
 
+        if category_count>0 and filelist_childcount>0:
 
+            i=0
             for i in range(filelist_childcount):
                 file = filelist_root.child(i)
                 print("analyse du fichier {} :".format(file.text(0)))
                 if file.text(1) is "" :
-                    for j in range(template_category_count):
-                        template_category=template_category_root.child(j)
-                        template_category_count=template_category.childCount()
-                        for k in range(template_category_count):
-                            template=template_category.child(k)
-                            template_count=template.childCount()
-                            templatetargets=[]
-                            tcctemp=template.child(0).child(0)
-                            tittletarget=[tcctemp.data(3,0),
-                                          tcctemp.data(4,0),
-                                          tcctemp.data(5,0),
-                                          tcctemp.data(6,0)]
-                            for l in range (template_count) :
-                                tc=template.child(l)
-                                templatetargets.append([tc.data(2,0),
-                                                        tc.data(3,0),
-                                                        tc.data(4,0),
-                                                        tc.data(5,0),
-                                                        tc.data(6,0)])
-                                for target in templatetargets :
+                    j=0
+                    for j in range(category_count):
+                        category=template_category_root.child(j)
+                        subcategory_count=category.childCount()
+                        k=0
+                        for k in range(subcategory_count):
+                            print("={}".format(k))
+                            subcategory=category.child(k)
+                            template_count=subcategory.childCount()
+                            l=0
+                            for l in range(template_count):
+                                templatedefinition = subcategory.child(l)
+                                triggertargets=[]
+                                tittletargetdefinition=subcategory.child(0).child(0)
+                                tittletarget=[tittletargetdefinition.data(3,0),
+                                              tittletargetdefinition.data(4,0),
+                                              tittletargetdefinition.data(5,0),
+                                              tittletargetdefinition.data(6,0)]
+
+                                triggertargets.append([templatedefinition.data(2,0),
+                                                            templatedefinition.data(3,0),
+                                                            templatedefinition.data(4,0),
+                                                            templatedefinition.data(5,0),
+                                                            templatedefinition.data(6,0)])
+                                for target in triggertargets :
                                     OCRtarget = target[0]
                                     file_abspath = file.data(4,0)
                                     detection_zone = QtCore.QRect(QtCore.QPoint(int(target[1]),int(target[2])),
@@ -183,8 +191,8 @@ class MyApp(main.Ui_MainWindow,QtWidgets.QMainWindow):
                                             #print("strOCR : {} vs OCRtarget : {}".format(strOCR,OCRtarget))
                                             if OCRtarget in strOCR :
                                                 print("OCRtarget : {} found in {}".format(OCRtarget,file_abspath))
-                                                file.setText(1,template_category.text(0))
-                                                file.setText(2,template.text(1))
+                                                file.setText(1,category.text(0))
+                                                file.setText(2,subcategory.text(1))
 
                                                 tittle_zone = QtCore.QRect(QtCore.QPoint(int(tittletarget[0]), int(tittletarget[1])),
                                                                               QtCore.QPoint(int(tittletarget[2]), int(tittletarget[3])))
@@ -197,11 +205,11 @@ class MyApp(main.Ui_MainWindow,QtWidgets.QMainWindow):
 
                                                 for char in strtittle:
                                                     if charnum < self.filenamemaxchar:
-                                                        print("char : "+char)
+                                                        #print("char : "+char)
                                                         unwanted=False
                                                         returnline=False
                                                         for unautorizedchar in self.UnAutorizedchartable :
-                                                            print("strtittle : " + unautorizedchar)
+                                                            #print("strtittle : " + unautorizedchar)
                                                             if char is unautorizedchar :
                                                                 unwanted = True
                                                         for spacechar in self.spacechartable :
@@ -210,10 +218,10 @@ class MyApp(main.Ui_MainWindow,QtWidgets.QMainWindow):
                                                         if unwanted is True:
                                                             pass
                                                         elif returnline is True :
-                                                            print("strfilename : " + " ")
+                                                            #print("strfilename : " + " ")
                                                             strfilename=strfilename+" "
                                                         else :
-                                                            print("strfilename : " + strfilename)
+                                                           # print("strfilename : " + strfilename)
                                                             strfilename=strfilename+strtittle[charnum]
                                                     else :
                                                         pass
