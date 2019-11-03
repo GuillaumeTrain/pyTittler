@@ -27,7 +27,7 @@ Templates are composed of the following items :
 
 GUI Overview:
 
-<a href="https://ibb.co/4Vy08sB"><img src="https://i.ibb.co/S3TZtQq/Annotation-2019-11-02-140619.png" alt="Annotation-2019-11-02-140619" border="0"></a><br /><br />
+<a href="https://ibb.co/5cdd265"><img src="https://i.ibb.co/F799nKB/Annotation-2019-11-02-140619.png" alt="Annotation-2019-11-02-140619" border="0"></a>
 
 
 This program is based on the following technologies :
